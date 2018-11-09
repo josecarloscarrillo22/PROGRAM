@@ -1,0 +1,37 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "string"
+
+using namespace std;
+
+void contar (string frase);
+
+void main()
+{
+	string frase;
+	cout<<"ingrese la frase"<<endl;
+	getline(cin,frase);
+	if(frase.length()<=100)
+		contar (frase);
+	else
+		cout<<"hay mas de 100 caracteres en el programa";
+	    getch();
+}
+void contar (string frase)
+{
+	int vocales=0,consonantes=0,espacios=0;
+	int tam=frase.length();
+	for(int i=0;i<tam;i++)
+	{if (frase[i]=='a' ||frase[i]=='e'||frase[i]=='i'||frase[i]=='o'||frase[i]=='u')
+	 vocales++;
+	else {
+		if (frase[i]==' ')
+			consonantes++;
+			espacios++;
+	}
+	
+	cout<<"Hay"<<espacios+1<<"palabras"<<endl;
+	cout<<"Hay"<<consonantes<<"consonantes"<<endl;
+	cout<<"Hay"<<vocales<<"vocales"<<endl;
+	}
